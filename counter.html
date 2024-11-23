@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f4f8;
+    }
+    .counter-container {
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .counter-container h1 {
+      font-size: 2rem;
+      color: #4f46e5;
+    }
+    .counter-container p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-container">
+    <h1>Page Visit Counter</h1>
+    <p>Visits: <span id="visitCount">100</span></p>
+  </div>
+
+  <script>
+    // Default count starts from 100
+    const defaultCount = 100;
+
+    // Retrieve the current count from localStorage or initialize it
+    let visitCount = localStorage.getItem("visitCount");
+    if (!visitCount) {
+      visitCount = defaultCount; // Set to default if not present
+    } else {
+      visitCount = parseInt(visitCount) + 1; // Increment count
+    }
+
+    // Update the count in localStorage
+    localStorage.setItem("visitCount", visitCount);
+
+    // Display the count on the page
+    document.getElementById("visitCount").textContent = visitCount;
+  </script>
+</body>
+</html>
