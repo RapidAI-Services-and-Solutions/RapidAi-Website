@@ -1,0 +1,90 @@
+.team_container_carousel {
+    font-family: Arial, sans-serif;
+    margin-top:2rem !important;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    min-height: 40vh;
+    background-color: none;
+  }
+  
+  .carousel {
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; 
+  }
+  .carousel.visible {
+    opacity: 1;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .carousel-slide img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  
+  .carousel-slide h3 {
+    margin: 10px 0 5px;
+  }
+  
+  .carousel-slide p {
+    margin: 5px 0;
+  }
+  
+  .social-links a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .social-links a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+  }
+  
+  .social-links a img:hover {
+    transform: scale(1.2);
+  }
+  
+  @media screen and (min-width: 768px) {
+    .carousel-track {
+      flex-wrap: nowrap;
+    }
+  
+    .carousel-slide {
+      min-width: 25%; /* All four slides visible */
+      box-sizing: border-box;
+      padding: 10px;
+    }
+  
+    .carousel-track {
+      transition: none; /* Disable auto-scrolling */
+    }
+  }
+  
